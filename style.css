@@ -8,6 +8,7 @@
     --secondary-color: #FF008C;
     --terciary-color: #0DFF8F;
     --back: rgb(26, 26, 26);
+    --back2: rgb(39, 39, 39);
 }
 
 html{
@@ -103,7 +104,7 @@ header h1{
     right: 3rem;
 }
 
-@keyframes example {
+@keyframes change-color {
     0%   {background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 81%);}
     25%  {background: linear-gradient(90deg, rgba(10,255,0,1) 34%, rgba(13,255,143,1) 51%);}
     50%  {background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 59%);}
@@ -111,9 +112,9 @@ header h1{
 }
 
 @keyframes movement {
-    0% {transform: translate(0, 0);}
-    50% {transform: translate(5.2rem, 5.2rem);}
-    100% {transform: translate(0, 0);}
+    0% {transform: translate(35rem, 6rem) scale(1) rotate(0deg)}
+    50% {transform: translate(35rem, 6rem) scale(1.3) rotate(180deg)}
+    100% {transform: translate(35rem, 6rem) scale(1) rotate(0deg)}
 }
 
 .bactery{
@@ -123,15 +124,70 @@ header h1{
     border-radius: 1rem;
     transform: rotate(-45deg);
     margin-right: -20rem;
-    animation-name: example;
+    animation-name: change-color;
     animation-duration: 6s;
     animation-iteration-count: infinite;
 }
 
-.bactery1{
-    width: 4rem;
-    height: 1rem;
-    background-color: var(--primary-color);
-    border-radius: 1rem;
+.circle{
+    width: 40rem;
+    height: 40rem;
+    background: linear-gradient(90deg, rgba(10,255,0,1) 32%, rgba(13,255,143,1) 70%);
+    border-radius: 100%;
     animation-name: movement;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.apresentation h1{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 4rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5rem;
+}
+
+.apresentation h3{
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.apresentation button{
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    background-color: var(--back);
+    border-radius: 1.5rem;
+    border-style: solid;
+    border-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.apresentation button:hover{
+    color: var(--back);
+    background-color: var(--primary-color);
+    border-color: var(--back);
+    transition: linear 0.4s all;
+}
+
+.divide-flex{
+    width: 50%;
+}
+
+.apresentation svg{
+    width: 50%;
+    height: auto;
+}
+
+@keyframes line {
+    0% {transform: translate(-32rem, 50rem) rotate(-30deg)}
+    10% {transform: translate(0, 0) rotate(-30deg)}
+    90% {transform: translate(0, 0) rotate(-30deg)}
+    100% {transform: translate(40rem, -32rem) rotate(-30deg)}
+}
+
+.bar1{
+    width: 70rem;
+    height: 10rem;
+    background: var(--back);
+    animation: line 4s linear 0.1s infinite;
 }
