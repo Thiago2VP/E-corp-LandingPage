@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Viafont";
+    src: url(source/fonts/Font.ttf);
+}
+
+:root{
+    --primary-color: #0AFF00;
+    --secondary-color: #FF008C;
+    --terciary-color: #0DFF8F;
+    --back: rgb(26, 26, 26);
+}
+
+html{
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: var(--back);
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 120rem;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1{
+    font-size: 8rem;
+    font-family: Viafont;
+    background: -webkit-linear-gradient(var(--primary-color), var(--terciary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    transform: rotate(-30deg);
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.menu a{
+    font-family: 'Lato', sans-serif;
+    padding: 2rem;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.menu a::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.4rem;
+    background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 81%);
+    left: 0;
+    top: 5.2rem;
+    transition: ease-out 0.4s all;
+}
+
+.menu a:hover{
+    border-color: var(--primary-color);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+.animation-section{
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+@keyframes example {
+    0%   {background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 81%);}
+    25%  {background: linear-gradient(90deg, rgba(10,255,0,1) 34%, rgba(13,255,143,1) 51%);}
+    50%  {background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 59%);}
+    100% {background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 81%);}
+}
+
+@keyframes movement {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(5.2rem, 5.2rem);}
+    100% {transform: translate(0, 0);}
+}
+
+.bactery{
+    width: 70rem;
+    height: 1rem;
+    background: linear-gradient(90deg, rgba(10,255,0,1) 30%, rgba(13,255,143,1) 81%);
+    border-radius: 1rem;
+    transform: rotate(-45deg);
+    margin-right: -20rem;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.bactery1{
+    width: 4rem;
+    height: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    animation-name: movement;
+}
