@@ -5,7 +5,7 @@
 
 :root{
     --primary-color: #0AFF00;
-    --secondary-color: #FF008C;
+    --secondary-color: #FA40FF;
     --terciary-color: #0DFF8F;
     --back: rgb(26, 26, 26);
     --back2: rgb(39, 39, 39);
@@ -21,6 +21,7 @@ html{
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 header{
@@ -71,7 +72,8 @@ header h1{
 }
 
 .menu a{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
     padding: 2rem;
     font-size: 1.4rem;
     color: var(--primary-color);
@@ -139,6 +141,11 @@ header h1{
     animation-iteration-count: infinite;
 }
 
+.apresentation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .apresentation h1{
     font-family: 'Kdam Thmor Pro', sans-serif;
     font-size: 4rem;
@@ -156,7 +163,6 @@ header h1{
     font-size: 1.6rem;
     color: var(--primary-color);
     background-color: var(--back);
-    border-radius: 1.5rem;
     border-style: solid;
     border-color: var(--primary-color);
     cursor: pointer;
@@ -169,25 +175,475 @@ header h1{
     transition: linear 0.4s all;
 }
 
-.divide-flex{
-    width: 50%;
+.apresentation button:active{
+    background-color: black;
+    background-size: 100%;
+    transition: background 0s;
 }
 
-.apresentation svg{
-    width: 50%;
-    height: auto;
+.divide{
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
 }
 
-@keyframes line {
-    0% {transform: translate(-32rem, 50rem) rotate(-30deg)}
-    10% {transform: translate(0, 0) rotate(-30deg)}
-    90% {transform: translate(0, 0) rotate(-30deg)}
-    100% {transform: translate(40rem, -32rem) rotate(-30deg)}
+@keyframes roll {
+    0% {transform: rotate(0deg)}
+    50% {transform: rotate(180deg)}
+    100% {transform: rotate(360deg)}
+}
+
+.gear1{
+    position: absolute;
+    width: 22rem;
+    height: 22rem;
+    top: -1rem;
+    left: -5rem;
+    animation: roll 6s linear 0.1s infinite reverse;
+}
+
+.gear2{
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    bottom: 1rem;
+    left: 45rem;
+    animation: roll 5s linear 0.1s infinite;
 }
 
 .bar1{
+    position: absolute;
     width: 70rem;
-    height: 10rem;
-    background: var(--back);
-    animation: line 4s linear 0.1s infinite;
+    height: 20rem;
+    background: linear-gradient(90deg, var(--back2) 30%, var(--back) 81%);
+    transform: rotate(60deg);
+    right: -17rem;
+}
+
+.bar2{
+    position: absolute;
+    width: 70rem;
+    height: 8rem;
+    background: linear-gradient(90deg, var(--back2) 30%, var(--back) 81%);
+    transform: rotate(60deg);
+    right: 1rem;
+}
+
+.gearg1{
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    top: 1rem;
+    right: 2rem;
+    animation: roll 6s linear 0.1s infinite;
+}
+
+.gearg2{
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    top: 20rem;
+    right: 28rem;
+    animation: roll 6s linear 0.1s infinite reverse;
+}
+
+.gearg3{
+    position: absolute;
+    width: 17rem;
+    height: 17rem;
+    top: 2rem;
+    right: 34rem;
+    animation: roll 6s linear 0.1s infinite;
+}
+
+.prev{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 2;
+    margin-top: 4rem;
+}
+
+.prev h1{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 4rem;
+    color: var(--back2);
+    letter-spacing: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 0;
+}
+
+.prev p{
+    font-size: 2rem;
+    padding: 2rem;
+    color: var(--back2);
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.prev a{
+    font-size: 2rem;
+    padding: 1.2rem;
+    background-color: var(--back2);
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 0;
+    margin-left: 2rem;
+    text-align: center;
+}
+
+.prev a:hover{
+    background: linear-gradient(0deg, rgba(39,39,39,1) 23%, rgba(26,26,26,1) 88%);
+    box-shadow: 0.1rem 0.1rem 0.2rem black;
+}
+
+.prev a:active{
+    background-color: black;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+.prev svg{
+    margin: auto;
+}
+
+.card-prev{
+    min-height: 50vh;
+}
+
+.card-prev.card-prev1{
+    background-color: var(--terciary-color);
+    position: relative;
+}
+
+.card-prev.card-prev1 a{
+    color: var(--terciary-color);
+}
+
+.card-prev.card-prev2, .card-prev.card-prev3, .card-prev.card-prev6{
+    background-color: var(--back);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-prev.card-prev2 p, .card-prev.card-prev3 p, .card-prev.card-prev6 p{
+    color: rgb(53, 53, 53);
+}
+
+.card-prev.card-prev4{
+    background-color: var(--secondary-color);
+    position: relative;
+}
+
+.card-prev.card-prev4 a{
+    color: var(--secondary-color);
+}
+
+.card-prev.card-prev5{
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.use{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 50vh;
+}
+
+.use h1{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 2.7rem;
+    color: black;
+    letter-spacing: 0.5rem;
+    padding: 2rem 0 2rem 0;
+    margin-bottom: 0;
+}
+
+.technology{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.technology h1, .enterprise h1{
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.enterprise{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.enterprise img{
+    margin: auto;
+}
+
+.connection{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: var(--primary-color);
+    padding-bottom: 3rem;
+}
+
+.connection h2{
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.start::before{
+    content: "☉";
+    padding-right: 1rem;
+}
+
+.download::before{
+    content: "⬇";
+    padding-right: 1rem;
+}
+
+.docs::before{
+    content: "✉";
+    padding-right: 1rem;
+}
+
+.jobs::before{
+    content: "🖩";
+    padding-right: 1rem;
+}
+
+.connection p{
+    font-size: 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+}
+
+.connection a{
+    color: var(--back2);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.connection-part{
+    position: relative;
+}
+
+.connect-block::before{
+    content: "";
+    width: 95%;
+    padding: 0;
+    top: 0;
+    left: 1rem;
+    height: 0.5rem;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+}
+
+footer{
+    padding-bottom: 2rem;
+}
+
+footer h2{
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 0;
+    color: rgb(53, 53, 53);
+}
+
+footer a{
+    color: rgb(53, 53, 53);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 2rem;
+}
+
+footer a:hover{
+    color: var(--primary-color);
+}
+
+footer i{
+    color: rgb(53, 53, 53);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+footer i:hover{
+    color: var(--primary-color);
+}
+
+footer p{
+    text-align: center;
+    color: rgb(53, 53, 53);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 6rem;
+}
+
+.footer{
+    max-width: 120rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 950px){
+    .gearg3{
+        display: none;
+    }
+    .gear2{
+        display: none;
+    }
+    .technology img{
+        margin: auto;
+    }
+    .use{
+        text-align: center;
+    }
+    .connection a{
+        text-align: center;
+    }
+    .connection-part a{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 880px){
+    .gearg2{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 880px){
+    .menu{
+        background-color: var(--back);
+        width: 100%;
+    }
+    .menu a{
+        background-color: var(--back);
+    }
+    .prev{
+        grid-template-columns: 1fr;
+    }
+    .use{
+        grid-template-columns: 1fr;
+    }
+    .use img{
+        padding: 2rem;
+    }
+    .card-prev3{
+        grid-row: 4;
+    }
+    .card-prev4{
+        grid-row: 3;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .connection{
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer{
+        grid-template-columns: 1fr 1fr;
+    }
+    .connection-part{
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .apresentation{
+        width: 100%;
+        display: flex;
+    }
+    .divide{
+        width: 75%;
+    }
+    .bar1{
+        z-index: 1;
+    }
+    .bar2{
+        z-index: 1;
+    }
+    .gearg1{
+        top: 15rem;
+        right: -4rem;
+    }
+    .card-prev.card-prev1, .card-prev.card-prev4, .card-prev.card-prev5{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-prev.card-prev1 h1, .card-prev.card-prev4 h1, .card-prev.card-prev5 h1{
+        text-align: center;
+        display: flex;
+    }
+    .card-prev.card-prev1 p, .card-prev.card-prev4 p, .card-prev.card-prev5 p{
+        text-align: center;
+        display: flex;
+    }
+    .card-prev.card-prev1 a, .card-prev.card-prev4 h1, .card-prev.card-prev5 a{
+        text-align: center;
+        display: flex;
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 490px){
+    .menu{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0;
+    }
+    .menu a{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .bactery{
+        display: none;
+    }
+    .bar1{
+        height: 30rem;
+    }
+    .bar2{
+        height: 15rem;
+    }
+    .prev{
+        padding: 0;
+        width: 100%;
+        overflow: scroll;
+    }
+    .card-prev{
+        padding: 0;
+        width: 100%;
+        align-items: left;
+    }
+    .card-prev svg{
+        width: 100%;
+    }
+    .technology{
+        grid-template-columns: 1fr 1fr;
+    }
+    .enterprise{
+        grid-template-columns: 1fr;
+    }
+    .connection{
+        grid-template-columns: 1fr;
+    }
+    .footer{
+        grid-template-columns: 1fr;
+    }
+    .footer i{
+        margin: auto;
+    }
+    .follow{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
